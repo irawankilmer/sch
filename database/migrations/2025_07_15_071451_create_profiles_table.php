@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('full_name', 100)->notnull;
-            $table->enum('jenisKelamin', ['laki - laki', 'perempuan']);
+            $table->string('full_name', 100);
+            $table->enum('gender', ['laki - laki', 'perempuan']);
             $table->text('image');
             $table->foreignId('user_id')
             ->constrained()
             ->onUpdate('cascade')
             ->onDelete('cascade');
-            $table->
             $table->timestamps();
         });
     }
