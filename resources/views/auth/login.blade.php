@@ -86,43 +86,25 @@
 @endsection
 
 @push('scripts')
-@if ($errors->has('failed'))
-<script>
-  Swal.fire({
-    icon: 'error',
-    title: 'Login Gagal',
-    text: 'Username/email atau password salah.',
-    confirmButtonText: 'Tutup',
-    customClass: {
-      popup: 'swal2-clean-popup',
-      confirmButton: 'swal2-clean-button',
-    },
-    buttonsStyling: false,
-  });
-</script>
-<style>
-  .swal2-clean-popup {
-    border-radius: 10px;
-    padding: 1.8rem 2rem;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-  }
-  .swal2-clean-button {
-    background-color: #1f2937;
-    color: #fff;
-    font-weight: 500;
-    border-radius: 6px;
-    padding: 8px 20px;
-    border: none;
-    transition: background-color 0.2s ease-in-out;
-  }
-  .swal2-clean-button:hover {
-    background-color: #111827;
-  }
-</style>
+@if ($errors->has('error'))
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      Swal.fire({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: {!! json_encode($errors->first('error')) !!},
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        backdrop: false,
+        customClass: {
+          popup: 'colored-toast'
+        }
+      });
+    });
+  </script>
 @endif
-
 
 {{-- tombol animasi loading --}}
 <script>
@@ -143,4 +125,5 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
+@include('auth.toast')
 @endpush

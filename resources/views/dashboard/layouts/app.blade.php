@@ -21,6 +21,18 @@
     <script src="{{ asset('styles/dashboard/vendor/js/helpers.js'); }}"></script>
     <script src="{{ asset('styles/dashboard/js/config.js'); }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+      .swal2-container {
+        z-index: 2000 !important;
+      }
+      .swal2-backdrop-show {
+        background-color: rgba(0, 0, 0, 0.6) !important;
+      }
+      .swal2-container.swal2-backdrop-show {
+        background: none !important;
+        backdrop-filter: none !important;
+      }
+    </style>
   </head>
 
   <body>
@@ -44,6 +56,7 @@
       <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @include('dashboard.layouts.toast')
     <script src="{{ asset('styles/dashboard/vendor/libs/jquery/jquery.js'); }}"></script>
     <script src="{{ asset('styles/dashboard/vendor/libs/popper/popper.js'); }}"></script>
     <script src="{{ asset('styles/dashboard/vendor/js/bootstrap.js'); }}"></script>
@@ -53,23 +66,5 @@
     <script src="{{ asset('styles/dashboard/js/main.js'); }}"></script>
     <script src="{{ asset('styles/dashboard/js/dashboards-analytics.js'); }}"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script>
-     function confirmLogout() {
-       Swal.fire({
-         title: 'Yakin ingin logout?',
-         text: "Sesi kamu akan diakhiri.",
-         icon: 'warning',
-         showCancelButton: true,
-         confirmButtonColor: '#d33',
-         cancelButtonColor: '#6c757d',
-         confirmButtonText: 'Ya, logout',
-         cancelButtonText: 'Batal'
-       }).then((result) => {
-         if (result.isConfirmed) {
-           document.getElementById('logout-form').submit();
-         }
-       });
-     }
-   </script>
   </body>
 </html>

@@ -27,12 +27,12 @@ class AuthController extends Controller
         if (Auth::attempt([$identifier => $request->input('identifier'), 'password' => $request->input('password')], $remember)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('dashboard');
+            return redirect()->intended('dashboard')->with('success', 'Selamat datang kembali');
         }
 
         return back()->withErrors([
-            'failed' => 'Email, username atau password salah',
-        ])->onlyInput('identifier');
+            'error' => 'Email, username atau password salah',
+        ])->onlyInput('error');
     }
 
     public function logout(Request $request): RedirectResponse
@@ -40,6 +40,6 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/');
+        return redirect('/login')->with('success', 'Anda berhasil logout');
     }
 }
