@@ -1,5 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  class="layout-menu-fixed layout-compact"
+  data-assets-path="{{ asset('styles/dashboard/') }}"
+  data-template="vertical-menu-template-free">
   <head>
     <meta charset="utf-8" />
     <meta
