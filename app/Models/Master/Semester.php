@@ -10,7 +10,7 @@ class Semester extends Model
 {
     use HasUlids;
 
-    protected $fillable = ['semester', 'periode'];
+    protected $fillable = ['semester', 'periode', 'tahun_ajaran_id', 'status'];
     protected $table    = 'semester';
 
     public function tahunAjaran(): BelongsTo

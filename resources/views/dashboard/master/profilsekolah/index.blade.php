@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.app')
-@section('title', 'Dashboard')
+@section('title', 'Master Data - Profil Sekolah')
 
 @push('styles')
   <style>

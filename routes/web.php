@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Master\ProfilSekolahController;
+use App\Http\Controllers\Master\TahunAjaranController;
 use App\Http\Middleware\RoleMiddleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -29,5 +30,13 @@ Route::middleware(['auth'])->group(function () {
       Route::get('/profil-sekolah', 'index')->name('profilSekolah');
       Route::post('/profil-sekolah', 'update')->name('profilSekolahUpdate');
     })->middleware(RoleMiddleware::class.'role:Super Admin,Admin');
+
+    Route::controller(TahunAjaranController::class)->group(function () {
+      Route::get('/tahun-ajaran', 'index')->name('tahunAjaranIndex');
+      Route::post('/tahun-ajaran', 'store')->name('tahunAjaranStore');
+      Route::patch('/semester/{id}/aktifkan', 'activateSemester')->name('aktifkanSemester');
+      Route::patch('/tahun-ajaran/{id}/update', 'update')->name('tahunAjaranUpdate');
+
+    });
   });
 });

@@ -28,7 +28,13 @@
       <ul class="menu-sub">
         <li class="menu-item {{ request()->routeIs('master.profilSekolah') ? 'active': '' }}">
           <a href="{{ route('master.profilSekolah') }}" class="menu-link">
-            <div class="text-truncate" data-i18n="Analytics">Profil Sekolah</div>
+            <div class="text-truncate" data-i18n="Profil Sekolah">Profil Sekolah</div>
+          </a>
+        </li>
+
+        <li class="menu-item {{ request()->routeIs('master.tahunAjaranIndex') ? 'active': '' }}">
+          <a href="{{ route('master.tahunAjaranIndex') }}" class="menu-link">
+            <div class="text-truncate" data-i18n="Tahun Ajaran">Tahun Ajaran</div>
           </a>
         </li>
       </ul>
