@@ -11,6 +11,25 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create('tahun_ajaran', function (Blueprint $table) {
+            $table->ulid('id')->primary();
+            $table->string('tahun_ajaran')->unique();
+            $table->boolean('status')->default(false);
+            $table->timestamps();
+        });
+
+        Schema::create('semester', function (Blueprint $table) {
+            $table->ulid('id')->primary();
+            $table->ulid('tahun_ajaran_id');
+            $table->string('semester');
+            $table->enum('periode', ['Ganjil', 'Genap'])->default('ganjil');
+            $table->boolean('status')->default(false);
+            $table->timestamps();
+
+            $table->foreign('tahun_ajaran_id')->references('id')->on('tahun_ajaran')->onDelete('cascade');
+        });
+
+
         Schema::create('profil_sekolah', function (Blueprint $table) {
             $table->ulid('id')->primary();
             $table->string('nama_sekolah');
@@ -24,6 +43,13 @@ return new class extends Migration
             $table->string('status');
             $table->timestamps();
         });
+
+        Schema::create('jurusan', function (Blueprint $table) {
+            $table->ulid('id')->primary();
+            $table->string('nama_jurusan')->unique();
+            $table->string('singkatan')->unique();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -31,6 +57,9 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('tahun_ajaran');
+        Schema::dropIfExists('semester');
         Schema::dropIfExists('profil_sekolah');
+        Schema::dropIfExists('jurusan');
     }
 };
