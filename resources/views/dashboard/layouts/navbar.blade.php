@@ -10,6 +10,12 @@
             </div>
 
             <div class="navbar-nav-right d-flex align-items-center justify-content-end" id="navbar-collapse">
+              <div class="navbar-nav align-items-center me-auto">
+                <div class="nav-item d-flex align-items-center">
+                  Tahun Ajaran: {{ $tahunAktifGlobal->tahun_ajaran ?? 'Belum Aktif' }}({{ $tahunAktifGlobal->semester->firstWhere('status', true)?->semester }})
+                </div>
+              </div>
+
               <ul class="navbar-nav flex-row align-items-center ms-md-auto">
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">

@@ -15,6 +15,8 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
           'role' => RoleMiddleware::class,
         ]);
+
+        $middleware->append(\App\Http\Middleware\SetTahunAjaranGlobal::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
