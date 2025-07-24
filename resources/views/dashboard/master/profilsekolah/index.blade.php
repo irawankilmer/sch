@@ -38,7 +38,7 @@
                 <label class="col-sm-2 col-form-label" for="nama_sekolah">Nama Sekolah</label>
                 <div class="col-sm-10">
                   <div class="input-group input-group-merge @error('nama_sekolah') is-invalid @enderror">
-                    <span id="nama_sekolah2" class="input-group-text"><i class="icon-base bx bx-buildings"></i></span>
+                    <span id="nama_sekolah2" class="input-group-text"><i class="icon-base bx bx-rename"></i></span>
                     <input type="text" class="form-control" id="nama_sekolah" name="nama_sekolah"
                            placeholder="Nama Sekolah" value="{{ $data->nama_sekolah }}"
                            aria-describedby="nama_sekolah2"/>
@@ -54,7 +54,7 @@
                 <label class="col-sm-2 col-form-label" for="npsn">NPSN</label>
                 <div class="col-sm-10">
                   <div class="input-group input-group-merge">
-                    <span id="npsn2" class="input-group-text"><i class="icon-base bx bx-buildings"></i></span>
+                    <span id="npsn2" class="input-group-text"><i class="icon-base bx bx-key"></i></span>
                     <input type="text" class="form-control" id="npsn" name="npsn"
                            placeholder="NPSN" value="{{ $data->npsn }}" aria-describedby="npsn2"/>
                   </div>
@@ -70,7 +70,7 @@
                 <label class="col-sm-2 col-form-label" for="akreditasi">Akreditasi</label>
                 <div class="col-sm-10">
                   <div class="input-group input-group-merge">
-                    <span id="akreditasi2" class="input-group-text"><i class="icon-base bx bx-buildings"></i></span>
+                    <span id="akreditasi2" class="input-group-text"><i class="icon-base bx bx-equalizer"></i></span>
                     <input type="text" class="form-control" id="akreditasi" name="akreditasi"
                            placeholder="Akreditasi" value="{{ $data->akreditasi }}" aria-describedby="akreditasi2"/>
                   </div>
@@ -104,7 +104,7 @@
                 <label class="col-sm-2 col-form-label" for="alamat">Alamat</label>
                 <div class="col-sm-10">
                   <div class="input-group input-group-merge">
-                    <span id="alamat2" class="input-group-text"><i class="icon-base bx bx-comment"></i></span>
+                    <span id="alamat2" class="input-group-text"><i class="icon-base bx bx-pin"></i></span>
                     <textarea id="alamat" name="address" class="form-control" placeholder="Alamat"
                               aria-describedby="alamat2">{{ $data->address }}</textarea>
                   </div>
@@ -119,7 +119,7 @@
                 <label class="col-sm-2 col-form-label" for="phone">Nomor Telepon</label>
                 <div class="col-sm-10">
                   <div class="input-group input-group-merge">
-                    <span id="phone2" class="input-group-text"><i class="icon-base bx bx-phone"></i></span>
+                    <span id="phone2" class="input-group-text"><i class="icon-base bx bx-sitemap"></i></span>
                     <input type="text" id="phone" name="phone" class="form-control phone-mask"
                            placeholder="Nomor Telepon" value="{{ $data->phone }}" aria-describedby="phone2"/>
                   </div>
@@ -151,7 +151,7 @@
                 <label class="col-sm-2 col-form-label" for="tingkat">Tingkat</label>
                 <div class="col-sm-10">
                   <div class="input-group input-group-merge">
-                    <span id="tingkat" class="input-group-text"><i class="icon-base bx bx-phone"></i></span>
+                    <span id="tingkat" class="input-group-text"><i class="icon-base bx bx-signal-5"></i></span>
                     <input type="text" id="tingkat" name="tingkat" class="form-control phone-mask"
                            placeholder="Tingkat" value="{{ $data->tingkat }}" aria-describedby="tingkat"/>
                   </div>
@@ -166,7 +166,7 @@
                 <label class="col-sm-2 col-form-label" for="status">Status</label>
                 <div class="col-sm-10">
                   <div class="input-group input-group-merge">
-                    <span id="status" class="input-group-text"><i class="icon-base bx bx-phone"></i></span>
+                    <span id="status" class="input-group-text"><i class="icon-base bx bx-check"></i></span>
                     <input type="text" id="status" name="status" class="form-control phone-mask"
                            placeholder="Status" value="{{ $data->status }}" aria-describedby="status"/>
                   </div>
